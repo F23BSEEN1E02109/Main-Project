@@ -2,7 +2,7 @@ import React from 'react';
 import Building from '../Aboutpage/Building';
 import Connecting from '../Aboutpage/Connecting';
 import Ecosystem from '../Aboutpage/Ecosystem';
-import VisionMission from '../Aboutpage/Visionmission';
+import VisionMission from '../Aboutpage/VisionMission';
 import People from '../Homepage/People';
 
 
