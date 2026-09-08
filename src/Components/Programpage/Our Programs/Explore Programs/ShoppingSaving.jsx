@@ -1,111 +1,108 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const ShoppingSaving = () => {
+const SelfSaving = () => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  // Multi-page categories tabs or filter state
-  const categoriesList = ["All", "Electronics", "Fashion & Apparel", "Home & Living", "Global Travel", "Luxury Goods"];
+  const categoriesList = ["All", "Personal Security", "Emergency Prep", "Smart Insurance", "Wealth Protection", "Asset Backup"];
 
-  // Expanded high-end shopping cards with Unsplash professional shopping images
-  const shoppingCards = [
+  const selfSavingCards = [
     {
       id: 1,
-      title: "Next-Gen 4K Smart OLED TV",
-      category: "Electronics",
-      discount: "40% OFF",
-      price: "$699.00",
-      originalPrice: "$1,165.00",
-      image: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=800&q=80",
-      description: "Immersive cinematic color accuracy with ultra-slim bezels and built-in AI audio enhancement."
+      title: "Emergency Personal Go-Bag & Kit",
+      category: "Emergency Prep",
+      discount: "35% OFF",
+      price: "$89.00",
+      originalPrice: "$135.00",
+      image: "https://images.unsplash.com/photo-1499540633129-6f94e1078753?auto=format&fit=crop&w=800&q=80",
+      description: "Military-grade weatherproof emergency backpack fully equipped with survival gear, water filtration, and first aid tools."
     },
     {
       id: 2,
-      title: "Designer Executive Leather Jacket",
-      category: "Fashion & Apparel",
-      discount: "25% OFF",
-      price: "$249.00",
-      originalPrice: "$335.00",
-      image: "https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&w=800&q=80",
-      description: "Crafted from 100% genuine full-grain leather, tailored for timeless modern sophistication."
+      title: "Encrypted Hardware Crypto Wallet",
+      category: "Wealth Protection",
+      discount: "20% OFF",
+      price: "$119.00",
+      originalPrice: "$149.00",
+      image: "https://images.unsplash.com/photo-1621416894569-0f39ed31d247?auto=format&fit=crop&w=800&q=80",
+      description: "Offline cold-storage security device designed to protect your digital assets and self-sovereign wealth."
     },
     {
       id: 3,
-      title: "Ergonomic Minimalist Office Desk",
-      category: "Home & Living",
+      title: "Biometric Smart Home Safe Box",
+      category: "Asset Backup",
       discount: "30% OFF",
-      price: "$185.00",
-      originalPrice: "$265.00",
-      image: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=800&q=80",
-      description: "Solid oak finish with integrated cable management and sturdy matte steel framing."
+      price: "$210.00",
+      originalPrice: "$300.00",
+      image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80",
+      description: "Heavy-gauge steel security vault featuring fingerprint recognition and digital keypad backup for vital documents."
     },
     {
       id: 4,
-      title: "VIP Global Resort Getaway Pass",
-      category: "Global Travel",
-      discount: "Save $500",
-      price: "$1,299.00",
-      originalPrice: "$1,799.00",
-      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
-      description: "All-inclusive luxury resort accommodations across top-tier international destinations."
+      title: "Personal GPS Satellite Messenger",
+      category: "Personal Security",
+      discount: "Save $60",
+      price: "$239.00",
+      originalPrice: "$299.00",
+      image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?auto=format&fit=crop&w=800&q=80",
+      description: "Global two-way satellite communicator enabling SOS rescue signaling and live tracking anywhere on earth."
     },
     {
       id: 5,
-      title: "Pro Noise-Canceling Headphones",
-      category: "Electronics",
-      discount: "35% OFF",
-      price: "$199.00",
-      originalPrice: "$306.00",
-      image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80",
-      description: "Studio-quality acoustic sound isolation with 40-hour continuous battery playback."
+      title: "Solar-Powered Emergency Weather Radio",
+      category: "Emergency Prep",
+      discount: "45% OFF",
+      price: "$39.00",
+      originalPrice: "$70.00",
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+      description: "Hand-crank and solar-charged NOAA broadcast receiver with built-in LED flashlight and mobile power bank."
     },
     {
       id: 6,
-      title: "Swiss Automatic Chronograph Watch",
-      category: "Luxury Goods",
-      discount: "20% OFF",
-      price: "$850.00",
-      originalPrice: "$1,062.00",
-      image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80",
-      description: "Water-resistant sapphire crystal glass housing precision mechanical movement."
+      title: "Cyber Identity Theft Protection Suite",
+      category: "Smart Insurance",
+      discount: "25% OFF",
+      price: "$12.99 / mo",
+      originalPrice: "$17.50 / mo",
+      image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80",
+      description: "Real-time dark web surveillance, social security monitoring, and full financial recovery insurance coverage."
     },
     {
       id: 7,
-      title: "Urban Streetwear Oversized Hoodie",
-      category: "Fashion & Apparel",
-      discount: "50% OFF",
-      price: "$45.00",
-      originalPrice: "$90.00",
-      image: "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=800&q=80",
-      description: "Heavyweight organic cotton fleece designed for maximum comfort and streetwear aesthetics."
+      title: "Heavy-Duty Fireproof Document Bag",
+      category: "Asset Backup",
+      discount: "40% OFF",
+      price: "$29.00",
+      originalPrice: "$48.00",
+      image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80",
+      description: "Silicone-coated fiberglass organizer tested to withstand up to 2000°F to safeguard passports, cash, and deeds."
     },
     {
       id: 8,
-      title: "Smart Indoor Automated Garden",
-      category: "Home & Living",
+      title: "Portable Water Purification Gravity System",
+      category: "Emergency Prep",
       discount: "15% OFF",
-      price: "$120.00",
-      originalPrice: "$141.00",
-      image: "https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=800&q=80",
-      description: "Self-watering hydroponic system with automated LED growth lighting for fresh herbs at home."
+      price: "$75.00",
+      originalPrice: "$88.00",
+      image: "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=800&q=80",
+      description: "Hollow-fiber membrane filter that removes 99.9999% of waterborne bacteria for safe drinking in any crisis."
     },
     {
       id: 9,
-      title: "Ultra-Light Carbon Fiber Luggage",
-      category: "Global Travel",
-      discount: "25% OFF",
-      price: "$299.00",
-      originalPrice: "$399.00",
-      image: "https://images.unsplash.com/photo-1581553680327-1ff028f24410?auto=format&fit=crop&w=800&q=80",
-      description: "Aerospace-grade durability featuring 360-degree silent spinner wheels and TSA locks."
+      title: "Self-Defense Personal Safety Alarm",
+      category: "Personal Security",
+      discount: "50% OFF",
+      price: "$19.00",
+      originalPrice: "$38.00",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80",
+      description: "High-decibel keychain siren with flashing strobe light designed to deter threats and alert bystanders instantly."
     }
   ];
 
-  // Filter cards based on selected category tab
   const filteredCards = selectedCategory === "All" 
-    ? shoppingCards 
-    : shoppingCards.filter(card => card.category === selectedCategory);
+    ? selfSavingCards 
+    : selfSavingCards.filter(card => card.category === selectedCategory);
 
   return (
     <div className="w-full min-h-screen bg-[#050B14] font-sans py-16 px-4 sm:px-6 lg:px-8 text-white">
@@ -116,20 +113,20 @@ const ShoppingSaving = () => {
           <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-neutral-900 border border-neutral-800">
             <span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
             <span className="text-[10px] font-bold tracking-widest text-amber-400 uppercase">
-              PREMIUM DISCOUNTS & DEALS
+              AUTONOMOUS SECURITY & PREPAREDNESS
             </span>
           </div>
 
           <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight">
-            Shopping & <span className="text-amber-400">Savings Portal</span>
+            Self-Saving & <span className="text-amber-400">Security Portal</span>
           </h1>
 
           <p className="text-neutral-400 text-sm sm:text-base leading-relaxed">
-            Explore our curated catalog of elite global merchant deals, verified price cuts, and high-value savings designed exclusively for our members.
+            Equip yourself with elite personal preparedness tools, asset backups, and self-reliance gear engineered for total peace of mind.
           </p>
         </div>
 
-        {/* Multi-Page Category Tabs Simulation */}
+        {/* Category Tabs */}
         <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 border-b border-neutral-800/80 pb-6">
           {categoriesList.map((cat, index) => (
             <button
@@ -146,7 +143,7 @@ const ShoppingSaving = () => {
           ))}
         </div>
 
-        {/* Dynamic Cards Grid with Images */}
+        {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredCards.map((item) => (
             <div 
@@ -192,8 +189,13 @@ const ShoppingSaving = () => {
                     </div>
                   </div>
 
+                  {/* Non-functional button */}
                   <button 
-                    onClick={() => navigate('/contact-us')}
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                    }}
                     className="px-4 py-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-neutral-200 font-bold text-xs tracking-wider uppercase hover:bg-amber-400 hover:text-black hover:border-amber-400 transition-all duration-300 cursor-pointer"
                   >
                     Claim Offer
@@ -204,32 +206,30 @@ const ShoppingSaving = () => {
           ))}
         </div>
 
-        {/* Additional Multi-Page Information Banner */}
+        {/* Bottom Banner with Single Contact Button */}
         <div className="bg-gradient-to-br from-[#0b1320] via-[#09101a] to-[#111c3a] border border-neutral-800 rounded-3xl p-8 sm:p-12 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">
           <div className="space-y-3 max-w-2xl text-center lg:text-left">
             <span className="text-xs uppercase tracking-widest text-amber-400 font-bold block">
-              SECURE GLOBAL SAVINGS
+              INDIVIDUAL PREPAREDNESS CONSULTING
             </span>
             <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white">
-              Want access to private merchant discounts?
+              Need custom emergency planning or security advice?
             </h2>
             <p className="text-neutral-400 text-xs sm:text-sm leading-relaxed">
-              Our verified membership program unlocks direct access to manufacturer-direct pricing across global markets. Reach out to our executive support team for activation details.
+              Our safety consultants help design tailored self-reliance portfolios, asset redundancy frameworks, and emergency strategies. Reach out to our team to secure your tailored setup.
             </p>
           </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 shrink-0">
+          <div className="shrink-0">
             <button 
+              type="button"
               onClick={() => navigate('/contact-us')}
-              className="px-7 py-4 bg-amber-400 hover:bg-amber-300 text-black font-bold rounded-2xl text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 shadow-lg shadow-amber-400/20 cursor-pointer"
+              className="px-8 py-4 bg-amber-400 hover:bg-amber-300 text-black font-bold rounded-2xl text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 shadow-lg shadow-amber-400/20 cursor-pointer flex items-center gap-2"
             >
-              Contact Support
-            </button>
-            <button 
-              onClick={() => navigate('/terms')}
-              className="px-7 py-4 bg-neutral-900 hover:bg-neutral-800 border border-neutral-800 text-white font-bold rounded-2xl text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 cursor-pointer"
-            >
-              View Terms
+              <span>Contact Us</span>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+              </svg>
             </button>
           </div>
         </div>
@@ -239,4 +239,4 @@ const ShoppingSaving = () => {
   );
 };
 
-export default ShoppingSaving;
+export default SelfSaving;

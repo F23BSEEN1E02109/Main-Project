@@ -189,8 +189,13 @@ const PropertySaving = () => {
                     </div>
                   </div>
 
+                  {/* Non-functional button */}
                   <button 
-                    onClick={() => navigate('/contact-us')}
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                    }}
                     className="px-4 py-2.5 rounded-xl bg-neutral-900 border border-neutral-800 text-neutral-200 font-bold text-xs tracking-wider uppercase hover:bg-amber-400 hover:text-black hover:border-amber-400 transition-all duration-300 cursor-pointer"
                   >
                     Inquire Property
@@ -217,6 +222,7 @@ const PropertySaving = () => {
 
           <div className="shrink-0">
             <button 
+              type="button"
               onClick={() => navigate('/contact-us')}
               className="px-8 py-4 bg-amber-400 hover:bg-amber-300 text-black font-bold rounded-2xl text-xs sm:text-sm tracking-wider uppercase transition-all duration-300 shadow-lg shadow-amber-400/20 cursor-pointer flex items-center gap-2"
             >

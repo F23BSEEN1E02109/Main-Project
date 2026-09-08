@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import './App.css';
 import Navbar from './Components/CommonPage/Navbar';
 import Footer from './Components/CommonPage/Footer';
+import WhatsAppButton from './Components/Pages/WhatsAppButton';
 import Homepage from './Components/Pages/Homepage';
 import Aboutpage from './Components/Pages/Aboutpage';
 import Eventspage from './Components/Pages/Eventspage';
@@ -29,7 +30,6 @@ import PropertySaving from './Components/Programpage/Our Programs/Explore Progra
 import CropSaving from './Components/Programpage/Our Programs/Explore Programs/CropSaving';
 import SelfSaving from './Components/Programpage/Our Programs/Explore Programs/SelfSaving';
 
-
 function ScrollToTop() {
   const { pathname } = useLocation();
 
@@ -40,10 +40,38 @@ function ScrollToTop() {
   return null;
 }
 
+function ForceHomeOnRefresh() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    const navEntries = performance.getEntriesByType('navigation');
+    const isReload = navEntries.length > 0 && navEntries[0].type === 'reload';
+
+    if (isReload && location.pathname !== '/') {
+      navigate('/', { replace: true });
+    }
+  }, []);
+
+  return null;
+}
+
 function App() {
+
+  useEffect(() => {
+    const originalScrollIntoView = Element.prototype.scrollIntoView;
+    Element.prototype.scrollIntoView = function (options) {
+      if (typeof options === 'object') {
+        options.behavior = 'auto';
+      }
+      originalScrollIntoView.call(this, options);
+    };
+  }, []);
+
   return (
     <BrowserRouter>
       <ScrollToTop />
+      <ForceHomeOnRefresh />
       <div>
         <Navbar />
         
@@ -76,6 +104,8 @@ function App() {
         </Routes>
 
         <Footer />
+
+        <WhatsAppButton />
       </div>
     </BrowserRouter>
   );
