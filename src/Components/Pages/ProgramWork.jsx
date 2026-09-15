@@ -9,8 +9,8 @@ const ProgramWork = () => {
     <div>
     <Members />
     <Membership />
-    <Benefits />
     <Purchase />
+    <Benefits />
       
     </div>
   )
