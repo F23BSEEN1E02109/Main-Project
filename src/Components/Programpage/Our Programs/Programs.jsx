@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import program1 from '../../../assets/program1.webp';
+
 
 const Programs = () => {
   const navigate = useNavigate();
@@ -15,7 +17,7 @@ const Programs = () => {
       <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[65%] pointer-events-none opacity-40 lg:opacity-70">
         <div className="absolute inset-0 bg-gradient-to-r from-[#010711] via-[#010711]/60 to-transparent z-10" />
         <img 
-          src="/src/assets/hero.png" 
+          src={program1} 
           alt="World Globe Background" 
           className="w-full h-full object-cover object-right"
         />
@@ -33,7 +35,7 @@ const Programs = () => {
 
           {/* Main Headings */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-4">
-            Programs & <br />
+            Programs &amp; <br />
             <span className="text-amber-400">Opportunities</span>
           </h1>
 

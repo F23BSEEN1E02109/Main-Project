@@ -60,26 +60,44 @@ const Footer = () => {
                 <span>Transparency • Trust • Accessibility</span>
               </div>
 
-              {/* SOCIAL ICONS (NON-FUNCTIONAL DIVS) */}
+              {/* SOCIAL ICONS (FUNCTIONAL LINKS) */}
               <div className="flex items-center gap-2.5">
                 {/* Facebook */}
-                <div className="w-8 h-8 rounded-full border border-amber-500/30 bg-black/50 flex items-center justify-center text-gray-300 transition-all duration-300 hover:border-amber-400 hover:text-amber-400 hover:bg-amber-500/10 hover:shadow-[0_0_10px_rgba(245,158,11,0.3)] hover:scale-105 select-none cursor-default">
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="w-8 h-8 rounded-full border border-amber-500/30 bg-black/50 flex items-center justify-center text-gray-300 transition-all duration-300 hover:border-amber-400 hover:text-amber-400 hover:bg-amber-500/10 hover:shadow-[0_0_10px_rgba(245,158,11,0.3)] hover:scale-105 select-none cursor-pointer"
+                >
                   <span className="font-serif font-bold text-xs">f</span>
-                </div>
+                </a>
 
                 {/* X (Twitter) */}
-                <div className="w-8 h-8 rounded-full border border-amber-500/30 bg-black/50 flex items-center justify-center text-gray-300 transition-all duration-300 hover:border-amber-400 hover:text-amber-400 hover:bg-amber-500/10 hover:shadow-[0_0_10px_rgba(245,158,11,0.3)] hover:scale-105 select-none cursor-default">
+                <a
+                  href="https://x.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="X (Twitter)"
+                  className="w-8 h-8 rounded-full border border-amber-500/30 bg-black/50 flex items-center justify-center text-gray-300 transition-all duration-300 hover:border-amber-400 hover:text-amber-400 hover:bg-amber-500/10 hover:shadow-[0_0_10px_rgba(245,158,11,0.3)] hover:scale-105 select-none cursor-pointer"
+                >
                   <span className="font-sans font-bold text-[10px]">X</span>
-                </div>
+                </a>
 
                 {/* Instagram */}
-                <div className="w-8 h-8 rounded-full border border-amber-500/30 bg-black/50 flex items-center justify-center text-gray-300 transition-all duration-300 hover:border-amber-400 hover:text-amber-400 hover:bg-amber-500/10 hover:shadow-[0_0_10px_rgba(245,158,11,0.3)] hover:scale-105 select-none cursor-default">
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="w-8 h-8 rounded-full border border-amber-500/30 bg-black/50 flex items-center justify-center text-gray-300 transition-all duration-300 hover:border-amber-400 hover:text-amber-400 hover:bg-amber-500/10 hover:shadow-[0_0_10px_rgba(245,158,11,0.3)] hover:scale-105 select-none cursor-pointer"
+                >
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                     <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
                   </svg>
-                </div>
+                </a>
               </div>
             </div>
           </div>

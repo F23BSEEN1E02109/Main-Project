@@ -1,5 +1,8 @@
 import React from 'react';
 
+// Relative path 2 levels up (src/assets/hero-yes.png) fix kar diya gaya hai
+import heroYesBg from '../../assets/hero-yes.webp';
+
 const Events = () => {
   const scrollToFeatured = () => {
     const element = document.getElementById('featured-section');
@@ -18,10 +21,10 @@ const Events = () => {
   return (
     <section className="relative w-full min-h-screen bg-[#030712] text-white py-20 px-6 lg:px-16 overflow-hidden flex flex-col justify-center font-sans select-none">
       
-      {/* Background Globe Image Overlay */}
+      {/* Background Image Overlay */}
       <div className="absolute inset-0 z-0 opacity-80 pointer-events-none">
         <img
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1600&auto=format&fit=crop"
+          src={heroYesBg}
           alt="Global Network Globe"
           className="w-full h-full object-cover object-right"
         />

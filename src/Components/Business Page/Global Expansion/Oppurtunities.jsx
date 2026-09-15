@@ -1,5 +1,8 @@
 import React from 'react';
 
+// oppurtunities.webp ko assets folder se import kiya gaya hai
+import oppurtunitiesBg from '/src/assets/oppurtunities.webp';
+
 const Oppurtunities = () => {
   const topCards = [
     {
@@ -99,7 +102,7 @@ const Oppurtunities = () => {
           <div className="lg:col-span-6">
             <div className="group relative rounded-[32px] overflow-hidden shadow-xl h-[340px] sm:h-[400px] border border-gray-200 cursor-pointer">
               <img 
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000" 
+                src={oppurtunitiesBg} 
                 alt="Creating Global Opportunities" 
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out"
               />
@@ -119,7 +122,7 @@ const Oppurtunities = () => {
 
         </div>
 
-        {/* Top 4 Cards Grid (Cards remain dark as requested) */}
+        {/* Top 4 Cards Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {topCards.map((card) => {
             return (
@@ -159,7 +162,7 @@ const Oppurtunities = () => {
           })}
         </div>
 
-        {/* Bottom 2 Wide Cards (Cards remain dark as requested) */}
+        {/* Bottom 2 Wide Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {bottomCards.map((card, index) => (
             <div

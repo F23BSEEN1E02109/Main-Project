@@ -1,5 +1,8 @@
 import React from 'react';
 
+// hero-yes.webp ko src/assets se direct path ke sath import kiya gaya hai
+import heroYesBg from '/src/assets/hero-yes.webp';
+
 const Members = () => {
   return (
     <div className="relative w-full min-h-[500px] lg:min-h-[600px] bg-[#010711] text-white overflow-hidden flex items-center">
@@ -8,7 +11,7 @@ const Members = () => {
       <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[65%] pointer-events-none opacity-40 lg:opacity-70">
         <div className="absolute inset-0 bg-gradient-to-r from-[#010711] via-[#010711]/60 to-transparent z-10" />
         <img 
-          src="/src/assets/hero.png" 
+          src={heroYesBg} 
           alt="World Globe Background" 
           className="w-full h-full object-cover object-right"
         />

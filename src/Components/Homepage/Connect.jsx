@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../../i18n.js';
 import Program from './Program'; // Pehle wale button ke liye jo niche khulega
+import heroYes from '../../assets/hero-yes.webp';
 
 const Connect = () => {
   const { t } = useLanguage();
@@ -62,14 +63,14 @@ const Connect = () => {
 
   return (
     <div>
-      <section className="relative w-full min-h-[90vh] bg-[#030914] text-white flex flex-col justify-between overflow-hidden px-6 py-12 lg:px-16 lg:py-20">
+      <section className="relative w-full min-h-[70vh] bg-[#030914] text-white flex flex-col justify-between overflow-hidden px-6 py-12 lg:px-16 lg:py-20">
         
         {/* Background Globe Image with Dark Gradient Overlay */}
         <div 
           className="absolute inset-0 bg-cover bg-right lg:bg-center opacity-40 pointer-events-none" 
-          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')` }}
+          style={{ backgroundImage: `url(${heroYes})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#030914] via-[#030914]/80 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#000000] via-[#030914]/80 to-transparent pointer-events-none" />
 
         {/* Hero Content Section */}
         <div className="relative z-10 max-w-2xl mt-8 lg:mt-12">

@@ -1,6 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+// Image import
+import heroYesBg from "../../../assets/hero-yes.webp";
+
 const Investor = () => {
   const highlights = [
     {
@@ -26,14 +29,17 @@ const Investor = () => {
   ];
 
   return (
-    <section 
-      className="relative w-full min-h-screen bg-[#03070f] bg-cover bg-center bg-no-repeat bg-blend-overlay p-10 sm:px-10 sm:py-[60px] box-border font-sans text-white overflow-hidden flex flex-col justify-between"
-      style={{
-        backgroundImage: `radial-gradient(circle at 80% 50%, rgba(26, 45, 75, 0.4) 0%, transparent 50%), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000&auto=format&fit=crop')`
-      }}
-    >
-      {/* Investor Overlay */}
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,#03070f_45%,rgba(3,7,15,0.85)_70%,rgba(3,7,15,0.4)_100%)] z-[1]" />
+    <section className="relative w-full min-h-screen bg-[#03070f] p-10 sm:px-10 sm:py-[60px] box-border font-sans text-white overflow-hidden flex flex-col justify-between">
+      
+      {/* Background Image */}
+      <img 
+        src={heroYesBg} 
+        alt="Hero Background" 
+        className="absolute inset-0 w-full h-full object-cover object-center z-0"
+      />
+
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#03070f] via-[#03070f]/80 to-[#03070f]/40 z-[1]" />
 
       {/* Content Wrapper */}
       <div className="relative z-[2] max-w-[1200px] mx-auto w-full flex flex-col gap-[50px]">
@@ -43,7 +49,7 @@ const Investor = () => {
           
           {/* Badge */}
           <div className="inline-block px-4 py-1.5 rounded-[20px] bg-[rgba(10,18,30,0.8)] border border-[rgba(225,173,24,0.4)] text-[#e5b322] text-[10px] font-bold tracking-[0.8px] mb-6 shadow-[0_4px_15px_rgba(0,0,0,0.3)]">
-            INVESTORS & STRATEGIC PARTNERS
+            INVESTORS &amp; STRATEGIC PARTNERS
           </div>
 
           {/* Title */}

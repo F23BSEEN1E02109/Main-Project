@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// bank.png ko src/assets se import kiya gaya hai
+import bankBg from '../../../assets/bank.png';
+
 const Banking = () => {
   const financialPartners = [
     { 
@@ -81,30 +84,36 @@ const Banking = () => {
       {/* Top Dark Hero Section */}
       <div className="relative bg-[#050B14] text-white pt-12 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
         
-        {/* Background City/Bank Imagery Overlay with dark gradient */}
-        <div className="absolute inset-0 opacity-40 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000')] bg-cover bg-center mix-blend-luminosity"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050B14] via-[#050B14]/90 to-transparent"></div>
+        {/* Colorful Background Bank Image (Removed B&W filter) */}
+        <img 
+          src={bankBg} 
+          alt="Banking Background" 
+          className="absolute inset-0 w-full h-full object-cover object-center opacity-70 z-0"
+        />
+        
+        {/* Soft Gradient Overlay for text readability without washing out colors */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#050B14]/90 via-[#050B14]/60 to-transparent z-[1]"></div>
 
         <div className="max-w-[1200px] mx-auto relative z-10 space-y-10">
           
           {/* Badge */}
           <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 backdrop-blur-md">
             <span className="text-amber-400 text-xs">✦</span>
-            <span className="text-[11px] font-bold tracking-widest text-amber-400 uppercase">BANKS & FINANCIAL PARTNERS</span>
+            <span className="text-[11px] font-bold tracking-widest text-amber-400 uppercase">BANKS &amp; FINANCIAL PARTNERS</span>
           </div>
 
           {/* Title & Description Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-8 space-y-6">
               <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-                Trusted Banking & <br />
+                Trusted Banking &amp; <br />
                 <span className="text-amber-400">Financial Partnerships</span>
               </h1>
-              <p className="text-gray-300 text-sm sm:text-base max-w-xl leading-relaxed">
+              <p className="text-gray-200 text-sm sm:text-base max-w-xl leading-relaxed font-normal">
                 Connecting you with trusted banks and financial institutions for secure transactions, smart savings and a stronger financial future.
               </p>
 
-              {/* Action Buttons with Interactive Hover Effects */}
+              {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <Link 
                   to="/contact-us"
@@ -171,13 +180,11 @@ const Banking = () => {
         </div>
       </div>
 
-      {/* Bottom Section with Encompassing Container Box */}
+      {/* Bottom Section */}
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-16">
         
-        {/* Encompassing Outer Box */}
         <div className="bg-[#fafbfc] border border-gray-200/80 rounded-[32px] p-6 sm:p-8 shadow-sm space-y-8">
           
-          {/* Header inside the box */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-gray-200/60 pb-6">
             <div className="flex items-center space-x-2">
               <span className="text-xs font-bold tracking-widest text-gray-700 uppercase">OUR FINANCIAL PARTNERS</span>
@@ -191,12 +198,11 @@ const Banking = () => {
           {/* Continuous Scrolling Marquee Container */}
           <div className="relative w-full overflow-hidden py-2">
             
-            {/* Gradient fade borders for smooth look inside the box */}
             <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-[#fafbfc] to-transparent z-10 pointer-events-none"></div>
             <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-[#fafbfc] to-transparent z-10 pointer-events-none"></div>
 
-            {/* Marquee Track */}
-            <div className="flex w-max animate-marquee space-x-6 hover:[animation-play-state:paused]">
+            {/* Tailwind Arbitrary Marquee Animation */}
+            <div className="flex w-max space-x-6 animate-[marquee_25s_linear_infinite] hover:[animation-play-state:paused]">
               {[...financialPartners, ...financialPartners, ...financialPartners].map((partner, index) => (
                 <div
                   key={index}
@@ -212,21 +218,6 @@ const Banking = () => {
         </div>
 
       </div>
-
-      {/* Embedded CSS for Infinite Marquee Animation */}
-      <style>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0%);
-          }
-          100% {
-            transform: translateX(-33.333%);
-          }
-        }
-        .animate-marquee {
-          animation: marquee 25s linear infinite;
-        }
-      `}</style>
 
     </div>
   );

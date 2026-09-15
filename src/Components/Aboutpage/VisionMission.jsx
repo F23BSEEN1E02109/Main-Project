@@ -1,5 +1,9 @@
 import React from 'react';
 
+// Local images import ki hain (path relative to your file location)
+import visionmission1 from '../../assets/visionmission1.webp';
+import visionmission2 from '../../assets/visionmission2.webp';
+
 const VisionMission = () => {
   return (
     <section className="w-full py-16 px-4 sm:px-8 lg:px-16 bg-[#fafafa]">
@@ -9,10 +13,10 @@ const VisionMission = () => {
           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
           </svg>
-          Our Vision & Mission
+          Our Vision &amp; Mission
         </div>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight">
-          Our <span className="text-[#d97706]">Vision & Mission</span>
+          Our <span className="text-[#d97706]">Vision &amp; Mission</span>
         </h2>
         <p className="mt-3 text-sm sm:text-base text-gray-500 max-w-2xl mx-auto">
           Guiding principles driving our ecosystem toward sustainable growth and shared success.
@@ -28,8 +32,8 @@ const VisionMission = () => {
           {/* Left Image Section */}
           <div className="relative md:w-1/2 min-h-[260px] md:min-h-full overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1000&auto=format&fit=crop"
-              alt="Our Vision Building"
+              src={visionmission1}
+              alt="Our Vision"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-gray-200 text-[11px] font-bold text-gray-800 tracking-wider">
@@ -53,7 +57,6 @@ const VisionMission = () => {
                     <h3 className="text-xl font-bold text-[#0f172a] group-hover:text-[#d97706] transition-colors duration-300">
                       Our Vision
                     </h3>
-                    {/* Hover line extension */}
                     <div className="h-0.5 bg-[#d97706] w-6 group-hover:w-12 transition-all duration-300 mt-1 rounded-full" />
                   </div>
                 </div>
@@ -86,15 +89,14 @@ const VisionMission = () => {
           </div>
         </div>
 
-
         {/* CARD 2: OUR MISSION (DARK CARD) */}
         <div className="group relative flex flex-col md:flex-row bg-[#081225] rounded-3xl overflow-hidden shadow-sm border border-transparent hover:border-t-4 hover:border-t-[#d97706] hover:shadow-2xl transition-all duration-300">
           
           {/* Left Image Section */}
           <div className="relative md:w-1/2 min-h-[260px] md:min-h-full overflow-hidden">
             <img
-              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop"
-              alt="Our Mission World Digital Network"
+              src={visionmission2}
+              alt="Our Mission"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-[#081225]/80 backdrop-blur-md border border-gray-700 text-[11px] font-bold text-[#d97706] tracking-wider">
@@ -117,7 +119,6 @@ const VisionMission = () => {
                     <h3 className="text-xl font-bold text-white group-hover:text-[#d97706] transition-colors duration-300">
                       Our Mission
                     </h3>
-                    {/* Hover line extension */}
                     <div className="h-0.5 bg-[#d97706] w-6 group-hover:w-12 transition-all duration-300 mt-1 rounded-full" />
                   </div>
                 </div>

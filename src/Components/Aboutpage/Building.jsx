@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../../i18n.js';
+import heroYes from '../../assets/hero-yes.webp';
 
 const Building = () => {
   const { t } = useLanguage();
@@ -13,7 +14,7 @@ const Building = () => {
       <div 
         className="absolute inset-0 bg-cover bg-right pointer-events-none opacity-40"
         style={{ 
-          backgroundImage: `url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')`,
+          backgroundImage: `url(${heroYes})`,
           backgroundPosition: 'center right'
         }}
       />

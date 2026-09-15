@@ -1,6 +1,10 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import connecting1 from '../../assets/connecting1.webp';
+import connecting2 from '../../assets/connecting2.webp';
+import connecting3 from '../../assets/connecting3.webp';
+
 const Connecting = () => {
   const navigate = useNavigate();
 
@@ -11,7 +15,6 @@ const Connecting = () => {
 
   return (
     <section className="w-full bg-[#f8fafc] text-gray-900 py-12 px-6 lg:px-16 font-sans">
-      {/* items-start ki jagah items-center use kiya hai taaki right side media grid top se align hone ke bajaye vertically center ho jaye */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
         {/* Left Content Column (7 Columns) */}
@@ -119,10 +122,10 @@ const Connecting = () => {
         {/* Right Media Column */}
         <div className="lg:col-span-5 space-y-4">
           
-          {/* Main Top Banner Card */}
+          {/* Main Top Banner Card -> connecting1 */}
           <div className="relative rounded-2xl overflow-hidden shadow-lg border border-gray-200 group cursor-pointer bg-[#050b14] h-64">
             <img
-              src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1000&auto=format&fit=crop"
+              src={connecting1}
               alt="Global Opportunities Programs"
               className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
             />
@@ -134,10 +137,10 @@ const Connecting = () => {
           {/* Bottom 2 Split Cards */}
           <div className="grid grid-cols-2 gap-4">
             
-            {/* Left Card: YT Blue Network Graphic */}
+            {/* Left Card -> connecting2 */}
             <div className="relative rounded-2xl overflow-hidden shadow-md border border-gray-200 group cursor-pointer bg-[#03153d] h-44">
               <img
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop"
+                src={connecting2}
                 alt="Yes Time Global Network"
                 className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
               />
@@ -146,11 +149,11 @@ const Connecting = () => {
               </div>
             </div>
 
-            {/* Right Card: Luxury BMW Car */}
+            {/* Right Card -> connecting3 */}
             <div className="relative rounded-2xl overflow-hidden shadow-md border border-gray-200 group cursor-pointer bg-slate-100 h-44">
               <img
-                src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=600&auto=format&fit=crop"
-                alt="Community First Luxury Car"
+                src={connecting3}
+                alt="Community First"
                 className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
               />
               <div className="absolute bottom-3 left-3 bg-white/90 backdrop-blur-md text-emerald-700 border border-emerald-200 text-[10px] font-bold px-2.5 py-1 rounded-md shadow-sm">
@@ -167,4 +170,4 @@ const Connecting = () => {
   );
 };
 
-export default Connecting;
+export default Connecting;  
