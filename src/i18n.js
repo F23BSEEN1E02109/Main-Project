@@ -18,8 +18,10 @@ export const translations = {
     support: "Support",
     customer_support: "Customer Support",
     faqs: "FAQs",
+    refund_cancellation: "Refund & Cancellation",
     terms: "Terms & Conditions",
     privacy: "Privacy Policy",
+    sign_in: "Sign In",
     contact_us: "Contact Us"
   },
   UR: {
@@ -38,8 +40,10 @@ export const translations = {
     support: "مدد",
     customer_support: "کسٹمر سپورٹ",
     faqs: "عام سوالات",
+    refund_cancellation: "ریفنڈ اور منسوخی",
     terms: "شرائط و ضوابط",
     privacy: "پرائیویسی پالیسی",
+    sign_in: "سائن ان",
     contact_us: "ہم سے رابطہ کریں"
   },
   AR: {
@@ -58,8 +62,10 @@ export const translations = {
     support: "الدعم",
     customer_support: "دعم العملاء",
     faqs: "الأسئلة الشائعة",
+    refund_cancellation: "الاسترداد والإلغاء",
     terms: "الشروط والأحكام",
     privacy: "سياسة الخصوصية",
+    sign_in: "تسجيل الدخول",
     contact_us: "اتصل بنا"
   }
 };

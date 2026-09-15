@@ -57,7 +57,6 @@ function ForceHomeOnRefresh() {
 }
 
 function App() {
-
   useEffect(() => {
     const originalScrollIntoView = Element.prototype.scrollIntoView;
     Element.prototype.scrollIntoView = function (options) {
