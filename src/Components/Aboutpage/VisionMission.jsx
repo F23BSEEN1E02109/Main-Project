@@ -1,10 +1,12 @@
 import React from 'react';
+import { useLanguage } from '../../i18n.js';
 
-// Local images import ki hain (path relative to your file location)
 import visionmission1 from '../../assets/visionmission1.webp';
 import visionmission2 from '../../assets/visionmission2.webp';
 
 const VisionMission = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="w-full py-16 px-4 sm:px-8 lg:px-16 bg-[#fafafa]">
       {/* Header Section */}
@@ -13,13 +15,13 @@ const VisionMission = () => {
           <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
           </svg>
-          Our Vision &amp; Mission
+          {t('Our Vision & Mission')}
         </div>
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#0f172a] tracking-tight">
-          Our <span className="text-[#d97706]">Vision &amp; Mission</span>
+          {t('Our')} <span className="text-[#d97706]">{t('Vision & Mission')}</span>
         </h2>
         <p className="mt-3 text-sm sm:text-base text-gray-500 max-w-2xl mx-auto">
-          Guiding principles driving our ecosystem toward sustainable growth and shared success.
+          {t('Guiding Principles drive our ecosystem towards sustainable growth and shared success.')}
         </p>
       </div>
 
@@ -33,18 +35,18 @@ const VisionMission = () => {
           <div className="relative md:w-1/2 min-h-[260px] md:min-h-full overflow-hidden">
             <img
               src={visionmission1}
-              alt="Our Vision"
+              alt={t('vision_image_alt')}
+              loading="lazy"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-gray-200 text-[11px] font-bold text-gray-800 tracking-wider">
-              01 / PURPOSE
+              {t('purpose_tag')}
             </div>
           </div>
 
           {/* Right Content Section */}
           <div className="p-6 sm:p-8 md:w-1/2 flex flex-col justify-between">
             <div>
-              {/* Header inside card */}
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#0b1528] flex items-center justify-center text-[#d97706]">
@@ -55,13 +57,12 @@ const VisionMission = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-[#0f172a] group-hover:text-[#d97706] transition-colors duration-300">
-                      Our Vision
+                      {t('our_vision')}
                     </h3>
                     <div className="h-0.5 bg-[#d97706] w-6 group-hover:w-12 transition-all duration-300 mt-1 rounded-full" />
                   </div>
                 </div>
 
-                {/* Arrow Button */}
                 <div className="w-8 h-8 rounded-full bg-gray-100 text-gray-500 group-hover:bg-[#d97706] group-hover:text-white flex items-center justify-center transition-all duration-300">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 17L17 7M17 7H7M17 7v10" />
@@ -69,13 +70,11 @@ const VisionMission = () => {
                 </div>
               </div>
 
-              {/* Description */}
               <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-6">
-                To be a global leader in creating a reliable and innovative ecosystem where individuals and businesses can access life-changing opportunities that bring growth, security, and prosperity to all.
+                {t('vision_description')}
               </p>
             </div>
 
-            {/* Bottom Highlight Box */}
             <div className="flex items-center gap-3 p-3.5 rounded-xl bg-[#fefce8] border border-[#fef08a] group-hover:border-[#fde047] transition-colors duration-300">
               <div className="w-8 h-8 rounded-lg bg-[#fef08a] flex items-center justify-center text-[#b45309] shrink-0">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -83,7 +82,7 @@ const VisionMission = () => {
                 </svg>
               </div>
               <span className="text-xs font-semibold text-[#854d0e]">
-                A world of equal opportunities for everyone.
+                {t('vision_badge')}
               </span>
             </div>
           </div>
@@ -96,18 +95,18 @@ const VisionMission = () => {
           <div className="relative md:w-1/2 min-h-[260px] md:min-h-full overflow-hidden">
             <img
               src={visionmission2}
-              alt="Our Mission"
+              alt={t('mission_image_alt')}
+              loading="lazy"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
             <div className="absolute top-4 left-4 z-10 px-3 py-1 rounded-full bg-[#081225]/80 backdrop-blur-md border border-gray-700 text-[11px] font-bold text-[#d97706] tracking-wider">
-              02 / ACTION
+              {t('action_tag')}
             </div>
           </div>
 
           {/* Right Content Section */}
           <div className="p-6 sm:p-8 md:w-1/2 flex flex-col justify-between">
             <div>
-              {/* Header inside card */}
               <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-xl bg-[#0f1d38] border border-gray-700 flex items-center justify-center text-[#d97706]">
@@ -117,13 +116,12 @@ const VisionMission = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white group-hover:text-[#d97706] transition-colors duration-300">
-                      Our Mission
+                      {t('our_mission')}
                     </h3>
                     <div className="h-0.5 bg-[#d97706] w-6 group-hover:w-12 transition-all duration-300 mt-1 rounded-full" />
                   </div>
                 </div>
 
-                {/* Arrow Button */}
                 <div className="w-8 h-8 rounded-full bg-gray-800 text-gray-400 group-hover:bg-[#d97706] group-hover:text-white flex items-center justify-center transition-all duration-300">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 17L17 7M17 7H7M17 7v10" />
@@ -131,13 +129,11 @@ const VisionMission = () => {
                 </div>
               </div>
 
-              {/* Description */}
               <p className="text-gray-300 text-xs sm:text-sm leading-relaxed mb-6">
-                To connect people, businesses, and opportunities through accessible programs, strategic partnerships, and transparent processes — empowering communities to grow, achieve, and succeed together.
+                {t('mission_description')}
               </p>
             </div>
 
-            {/* Bottom Highlight Box */}
             <div className="flex items-center gap-3 p-3.5 rounded-xl bg-[#0f1f3d] border border-gray-700/60 group-hover:border-gray-600 transition-colors duration-300">
               <div className="w-8 h-8 rounded-lg bg-[#192b4d] flex items-center justify-center text-[#d97706] shrink-0">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -145,7 +141,7 @@ const VisionMission = () => {
                 </svg>
               </div>
               <span className="text-xs font-semibold text-gray-200">
-                Empower people. Build trust. Create lasting impact.
+                {t('mission_badge')}
               </span>
             </div>
           </div>

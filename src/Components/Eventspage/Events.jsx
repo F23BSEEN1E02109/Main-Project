@@ -1,9 +1,12 @@
 import React from 'react';
+import { useLanguage } from '../../i18n.js';
 
 // Relative path 2 levels up (src/assets/hero-yes.png) fix kar diya gaya hai
 import heroYesBg from '../../assets/hero-yes.webp';
 
 const Events = () => {
+  const { t } = useLanguage();
+
   const scrollToFeatured = () => {
     const element = document.getElementById('featured-section');
     if (element) {
@@ -25,7 +28,7 @@ const Events = () => {
       <div className="absolute inset-0 z-0 opacity-80 pointer-events-none">
         <img
           src={heroYesBg}
-          alt="Global Network Globe"
+          alt={t('alt_global_network_globe')}
           className="w-full h-full object-cover object-right"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#030712] via-[#030712]/90 to-transparent" />
@@ -34,32 +37,32 @@ const Events = () => {
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         <div className="mb-6 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-xs font-bold uppercase tracking-wider">
           <span>✨</span>
-          <span>GLOBAL EVENTS</span>
+          <span>{t('badge_global_events')}</span>
         </div>
 
         <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white max-w-2xl leading-tight mb-6">
-          Connect, Learn &amp; <br />
-          <span className="text-amber-500">Grow Together.</span>
+          {t('events_hero_title_part1')} <br />
+          <span className="text-amber-500">{t('events_hero_title_part2')}</span>
         </h1>
 
         <p className="text-gray-300 text-sm sm:text-base max-w-xl leading-relaxed mb-12">
-          Join exclusive events where like-minded entrepreneurs, investors, and partners gather to build meaningful connections and unlock global opportunities.
+          {t('events_hero_description')}
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-xl mb-12">
           <div className="bg-[#091121]/80 backdrop-blur-md border border-gray-800/80 rounded-2xl p-5 shadow-lg">
             <h3 className="text-2xl font-black text-amber-500 mb-1">50+</h3>
-            <p className="text-xs text-gray-400 font-medium">Annual Events</p>
+            <p className="text-xs text-gray-400 font-medium">{t('stat_annual_events')}</p>
           </div>
 
           <div className="bg-[#091121]/80 backdrop-blur-md border border-gray-800/80 rounded-2xl p-5 shadow-lg">
             <h3 className="text-2xl font-black text-amber-500 mb-1">2000+</h3>
-            <p className="text-xs text-gray-400 font-medium">Attendees</p>
+            <p className="text-xs text-gray-400 font-medium">{t('stat_attendees')}</p>
           </div>
 
           <div className="bg-[#091121]/80 backdrop-blur-md border border-gray-800/80 rounded-2xl p-5 shadow-lg">
             <h3 className="text-2xl font-black text-amber-500 mb-1">30+</h3>
-            <p className="text-xs text-gray-400 font-medium">Countries</p>
+            <p className="text-xs text-gray-400 font-medium">{t('stat_countries')}</p>
           </div>
         </div>
 
@@ -68,7 +71,7 @@ const Events = () => {
             onClick={scrollToFeatured}
             className="group flex items-center gap-2 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-500 hover:to-amber-600 text-slate-950 font-bold px-6 py-3.5 rounded-xl text-sm transition-all duration-300 shadow-lg shadow-amber-500/20 active:scale-95 cursor-pointer"
           >
-            <span>Explore Events</span>
+            <span>{t('btn_explore_events')}</span>
             <svg 
               className="w-0 h-4 opacity-0 group-hover:w-4 group-hover:opacity-100 transition-all duration-300 transform group-hover:translate-x-1 shrink-0" 
               fill="none" 
@@ -84,7 +87,7 @@ const Events = () => {
             onClick={scrollToWhyAttend}
             className="group flex items-center gap-2 bg-[#081021]/90 hover:bg-[#0e1a32] border border-gray-700/80 text-white font-semibold px-6 py-3.5 rounded-xl text-sm transition-all duration-300 active:scale-95 cursor-pointer"
           >
-            <span>Learn More</span>
+            <span>{t('btn_learn_more')}</span>
             <svg 
               className="w-0 h-4 opacity-0 group-hover:w-4 group-hover:opacity-100 text-amber-500 transition-all duration-300 transform group-hover:translate-x-1 shrink-0" 
               fill="none" 
@@ -102,7 +105,7 @@ const Events = () => {
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center">
         <button 
           onClick={scrollToFeatured}
-          aria-label="Scroll Down"
+          aria-label={t('aria_scroll_down')}
           className="text-amber-500 hover:text-amber-400 transition-colors duration-300 animate-bounce p-2 cursor-pointer bg-transparent border-none"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">

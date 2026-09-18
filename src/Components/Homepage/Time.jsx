@@ -1,16 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { useLanguage } from "../../i18n.js";
 import logoImg from "../../assets/logo.webp";
 import hero1 from "../../assets/hero1.webp";
 
 const Time = () => {
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   const cardsData = [
     {
       id: "mission",
-      title: "Mission",
-      text: "Empowering lives through global access & shared opportunities.",
+      title: t("mission"),
+      text: t("mission_text"),
       icon: (
         <svg
           className="w-6 h-6 transition-transform duration-300 group-hover:rotate-6"
@@ -27,8 +29,8 @@ const Time = () => {
     },
     {
       id: "vision",
-      title: "Vision",
-      text: "A connected world of transparent and equal opportunities for all.",
+      title: t("vision"),
+      text: t("vision_text"),
       icon: (
         <svg
           className="w-6 h-6 transition-transform duration-300 group-hover:rotate-6"
@@ -44,8 +46,8 @@ const Time = () => {
     },
     {
       id: "core-values",
-      title: "Core Values",
-      text: "Built on trust, integrity, transparency, and sustainable growth.",
+      title: t("core_values"),
+      text: t("core_values_text"),
       icon: (
         <svg
           className="w-6 h-6 transition-transform duration-300 group-hover:rotate-6"
@@ -65,7 +67,7 @@ const Time = () => {
 
   return (
     <div className="min-h-screen bg-slate-100 flex items-center justify-center p-4 font-sans">
-      
+
       {/* Main Card */}
       <div
         className="
@@ -86,14 +88,14 @@ const Time = () => {
 
         {/* ================= LEFT SECTION ================= */}
         <div className="md:col-span-7 p-8 md:p-12 flex flex-col justify-between relative z-20 bg-white">
-          
+
           <div>
 
             {/* Header */}
             <div className="flex items-center justify-between mb-6">
-              
+
               <div className="flex items-center gap-3">
-                
+
                 {/* Icon */}
                 <div className="w-11 h-11 rounded-xl bg-slate-900 flex items-center justify-center text-amber-400 shadow-md">
                   <svg
@@ -111,7 +113,7 @@ const Time = () => {
                 </div>
 
                 <span className="text-xs font-bold tracking-wider text-amber-600 uppercase">
-                  Who We Are
+                  {t("who_we_are")}
                 </span>
 
               </div>
@@ -135,24 +137,16 @@ const Time = () => {
 
             {/* Main Text */}
             <p className="text-gray-700 text-sm md:text-base leading-relaxed mb-4">
-              At{" "}
-              <span className="font-bold text-slate-900 underline decoration-amber-500 underline-offset-4">
-                YES TIME GLOBAL
-              </span>
-              , we are a trusted international platform bridging members to
-              accessible vehicle schemes, real estate ventures, and automated
-              savings programs.
+              {t("time_intro")}
             </p>
 
             <p className="text-gray-500 text-xs md:text-sm leading-relaxed mb-6">
-              We create accessible programs and strategic partnerships that
-              empower individuals and communities to grow, achieve, and succeed
-              together.
+              {t("time_second")}
             </p>
 
             {/* Key Points */}
             <div className="flex flex-wrap items-center gap-6 mb-8 text-xs md:text-sm font-semibold text-slate-800">
-              
+
               <div className="flex items-center gap-2">
                 <svg
                   className="w-4 h-4 text-amber-500"
@@ -164,7 +158,7 @@ const Time = () => {
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                   <polyline points="22 4 12 14.01 9 11.01" />
                 </svg>
-                <span>Global Opportunities</span>
+                <span>{t("global_opportunities")}</span>
               </div>
 
               <div className="flex items-center gap-2">
@@ -178,14 +172,14 @@ const Time = () => {
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
                   <polyline points="22 4 12 14.01 9 11.01" />
                 </svg>
-                <span>Transparent Process</span>
+                <span>{t("built_on_transparency")}</span>
               </div>
 
             </div>
 
             {/* Feature Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-              
+
               {cardsData.map((card) => (
                 <div
                   key={card.id}
@@ -210,7 +204,7 @@ const Time = () => {
                     items-center
                   "
                 >
-                  
+
                   <div
                     className="
                       w-12
@@ -272,7 +266,7 @@ const Time = () => {
                 cursor-pointer
               "
             >
-              <span>Discover Full Story</span>
+              <span>{t("discover_full_story")}</span>
 
               <svg
                 className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
@@ -288,7 +282,6 @@ const Time = () => {
           </div>
 
         </div>
-
 
         {/* ================= RIGHT IMAGE SECTION ================= */}
         <div
@@ -337,10 +330,7 @@ const Time = () => {
             "
           ></div>
 
-
-          {/* =========================================
-              CURVED WHITE BOUNDARY
-             ========================================= */}
+          {/* Curved White Boundary */}
           <div
             className="
               hidden
@@ -348,19 +338,14 @@ const Time = () => {
               absolute
               z-10
               bg-white
-
               -left-[105px]
               -top-[8%]
-
               w-[180px]
               h-[116%]
-
               rounded-[50%]
-              
               pointer-events-none
             "
           ></div>
-
 
           {/* Soft curve edge */}
           <div
@@ -373,19 +358,15 @@ const Time = () => {
               -top-[5%]
               w-[90px]
               h-[110%]
-
               rounded-[50%]
-
               bg-gradient-to-r
               from-white
               via-white/90
               to-transparent
-
               blur-[1px]
               pointer-events-none
             "
           ></div>
-
 
           {/* Golden Glow */}
           <div

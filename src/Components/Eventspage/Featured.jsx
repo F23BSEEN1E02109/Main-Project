@@ -1,84 +1,86 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../../i18n.js';
 
 const Featured = () => {
+  const { t } = useLanguage();
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   const eventsData = [
     {
       id: 1,
-      title: "Global Business Summit 2026",
-      description: "Experience global business conversations, connect with industry leaders, and discover new...",
-      date: "September 15, 2026",
-      time: "09:00 AM - 05:00 PM",
-      location: "Dubai, UAE",
-      attendees: "500 attendees",
-      status: "UPCOMING",
-      category: "CONFERENCE",
+      titleKey: "event1_title",
+      descriptionKey: "event1_desc",
+      dateKey: "event1_date",
+      timeKey: "event1_time",
+      locationKey: "event1_location",
+      attendeesKey: "event1_attendees",
+      statusKey: "status_upcoming",
+      categoryKey: "category_conference",
       categoryBg: "bg-amber-100 text-amber-800 border-amber-300",
       videoUrl: "https://vjs.zencdn.net/v/oceans.mp4",
     },
     {
       id: 2,
-      title: "Entrepreneurship Workshop",
-      description: "Explore practical entrepreneurship strategies, business ideas, and valuable insights designed to...",
-      date: "September 22, 2026",
-      time: "10:00 AM - 04:00 PM",
-      location: "Mumbai, India",
-      attendees: "200 attendees",
-      status: "UPCOMING",
-      category: "WORKSHOP",
+      titleKey: "event2_title",
+      descriptionKey: "event2_desc",
+      dateKey: "event2_date",
+      timeKey: "event2_time",
+      locationKey: "event2_location",
+      attendeesKey: "event2_attendees",
+      statusKey: "status_upcoming",
+      categoryKey: "category_workshop",
       categoryBg: "bg-purple-100 text-purple-700 border-purple-200",
       videoUrl: "https://media.w3.org/2010/05/sintel/trailer.mp4",
     },
     {
       id: 3,
-      title: "Financial Insights Seminar",
-      description: "Gain valuable financial perspectives, explore smart investment approaches, and learn how strategic...",
-      date: "October 5, 2026",
-      time: "02:00 PM - 05:00 PM",
-      location: "Singapore",
-      attendees: "300 attendees",
-      status: "UPCOMING",
-      category: "SEMINAR",
+      titleKey: "event3_title",
+      descriptionKey: "event3_desc",
+      dateKey: "event3_date",
+      timeKey: "event3_time",
+      locationKey: "event3_location",
+      attendeesKey: "event3_attendees",
+      statusKey: "status_upcoming",
+      categoryKey: "category_seminar",
       categoryBg: "bg-blue-100 text-blue-700 border-blue-200",
       videoUrl: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
     },
     {
       id: 4,
-      title: "Women Leaders Networking Brunch",
-      description: "Meet inspiring women leaders, exchange ideas, share experiences, and build meaningful professional...",
-      date: "October 12, 2026",
-      time: "10:30 AM - 01:00 PM",
-      location: "London, UK",
-      attendees: "150 attendees",
-      status: "UPCOMING",
-      category: "NETWORKING",
+      titleKey: "event4_title",
+      descriptionKey: "event4_desc",
+      dateKey: "event4_date",
+      timeKey: "event4_time",
+      locationKey: "event4_location",
+      attendeesKey: "event4_attendees",
+      statusKey: "status_upcoming",
+      categoryKey: "category_networking",
       categoryBg: "bg-emerald-100 text-emerald-700 border-emerald-200",
       videoUrl: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
     },
     {
       id: 5,
-      title: "Digital Transformation Forum",
-      description: "Discover how digital innovation, emerging technologies, and modern business solutions are...",
-      date: "October 20, 2026",
-      time: "09:00 AM - 06:00 PM",
-      location: "New York, USA",
-      attendees: "400 attendees",
-      status: "UPCOMING",
-      category: "CONFERENCE",
+      titleKey: "event5_title",
+      descriptionKey: "event5_desc",
+      dateKey: "event5_date",
+      timeKey: "event5_time",
+      locationKey: "event5_location",
+      attendeesKey: "event5_attendees",
+      statusKey: "status_upcoming",
+      categoryKey: "category_conference",
       categoryBg: "bg-amber-100 text-amber-800 border-amber-300",
       videoUrl: "https://media.w3.org/2010/05/video/movie_300.mp4",
     },
     {
       id: 6,
-      title: "Partnership & Growth Summit",
-      description: "Explore strategic partnerships, connect with ambitious business leaders, and discover...",
-      date: "November 1, 2026",
-      time: "08:30 AM - 05:30 PM",
-      location: "Tokyo, Japan",
-      attendees: "350 attendees",
-      status: "UPCOMING",
-      category: "CONFERENCE",
+      titleKey: "event6_title",
+      descriptionKey: "event6_desc",
+      dateKey: "event6_date",
+      timeKey: "event6_time",
+      locationKey: "event6_location",
+      attendeesKey: "event6_attendees",
+      statusKey: "status_upcoming",
+      categoryKey: "category_conference",
       categoryBg: "bg-amber-100 text-amber-800 border-amber-300",
       videoUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
     },
@@ -90,15 +92,15 @@ const Featured = () => {
       <div className="max-w-4xl mx-auto text-center mb-16">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 text-xs font-bold uppercase tracking-wider mb-4">
           <span>✨</span>
-          <span>FEATURED EVENTS</span>
+          <span>{t('badge_featured_events')}</span>
         </div>
 
         <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0a1128] tracking-tight mb-4">
-          Global Events
+          {t('featured_events_heading')}
         </h2>
 
         <p className="text-gray-500 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-          Explore our featured events through engaging videos, discover new opportunities, and connect with global business leaders, entrepreneurs, and professionals.
+          {t('featured_events_subtext')}
         </p>
       </div>
 
@@ -124,11 +126,11 @@ const Featured = () => {
                 <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-300" />
 
                 <div className="absolute top-3 left-3 bg-amber-100/90 backdrop-blur-md text-amber-800 text-[10px] font-bold px-2.5 py-1 rounded-full border border-amber-300 shadow-sm">
-                  {event.status}
+                  {t(event.statusKey)}
                 </div>
 
                 <div className={`absolute top-3 right-3 text-[10px] font-bold px-2.5 py-1 rounded-full border shadow-sm ${event.categoryBg}`}>
-                  {event.category}
+                  {t(event.categoryKey)}
                 </div>
 
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -140,17 +142,17 @@ const Featured = () => {
                 </div>
 
                 <div className="absolute bottom-3 left-3 bg-black/60 backdrop-blur-md text-white text-[10px] font-bold tracking-wider px-2 py-0.5 rounded uppercase">
-                  WATCH VIDEO
+                  {t('watch_video_tag')}
                 </div>
               </div>
 
               <div className="p-6">
                 <h3 className="text-xl font-bold text-[#0a1128] mb-2 transition-colors duration-300 group-hover:text-amber-500">
-                  {event.title}
+                  {t(event.titleKey)}
                 </h3>
 
                 <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-6">
-                  {event.description}
+                  {t(event.descriptionKey)}
                 </p>
 
                 <div className="space-y-3 pt-4 border-t border-gray-100 text-xs text-gray-600">
@@ -162,8 +164,8 @@ const Featured = () => {
                       </svg>
                     </div>
                     <div>
-                      <p className="font-semibold text-slate-800">{event.date}</p>
-                      <p className="text-[11px] text-gray-400">{event.time}</p>
+                      <p className="font-semibold text-slate-800">{t(event.dateKey)}</p>
+                      <p className="text-[11px] text-gray-400">{t(event.timeKey)}</p>
                     </div>
                   </div>
 
@@ -174,7 +176,7 @@ const Featured = () => {
                         <circle cx="12" cy="10" r="3" />
                       </svg>
                     </div>
-                    <span className="font-medium text-slate-700">{event.location}</span>
+                    <span className="font-medium text-slate-700">{t(event.locationKey)}</span>
                   </div>
 
                   <div className="flex items-center gap-2.5">
@@ -185,7 +187,7 @@ const Featured = () => {
                         <path d="M23 21v-2a4 4 0 0 1 0 7.75" />
                       </svg>
                     </div>
-                    <span className="font-semibold text-slate-800">{event.attendees}</span>
+                    <span className="font-semibold text-slate-800">{t(event.attendeesKey)}</span>
                   </div>
                 </div>
               </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { useLanguage } from "../../i18n.js";
 
 // Correct path to src/assets from src/Components/Homepage/
 import a1 from "../../assets/a1.png";
@@ -7,6 +8,8 @@ import a3 from "../../assets/a3.jpg";
 import a4 from "../../assets/a4.jpg";
 
 const People = () => {
+  const { t } = useLanguage();
+
   const teamMembers = [
     {
       id: "01",
@@ -24,7 +27,7 @@ const People = () => {
       roleEn: "Chief Operating Officer (COO)",
       roleUr: "چیف آپریٹنگ آفیسر",
       image: a2,
-      isCrown: true, // COO Card uses Crown Icon
+      isCrown: true,
     },
     {
       id: "03",
@@ -49,22 +52,24 @@ const People = () => {
   return (
     <section className="min-h-screen bg-[#fcfdfe] py-16 px-4 sm:px-6 lg:px-8 font-sans">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Top Tag Header */}
         <div className="flex justify-center mb-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100/60 text-amber-800 border border-amber-200/50 text-xs font-bold uppercase tracking-wider">
             <span className="text-amber-600 text-sm">✨</span>
-            MANAGEMENT TEAM
+            {t("management_team")}
           </div>
         </div>
 
         {/* Heading Section */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#0f172a] tracking-tight leading-tight">
-            Meet the people behind <span className="text-[#d97706]">YES TIME GLOBAL.</span>
+            {t("meet_people_behind")}{" "}
+            <span className="text-[#d97706]">YES TIME GLOBAL.</span>
           </h2>
+
           <p className="mt-3 text-xs sm:text-sm md:text-base text-gray-500 font-medium leading-relaxed max-w-2xl mx-auto">
-            Guided by experience, accountability, and a shared commitment to connecting opportunities worldwide.
+            {t("people_description")}
           </p>
         </div>
 
@@ -94,12 +99,22 @@ const People = () => {
                     <div className="w-9 h-9 rounded-xl bg-[#0f172a] border border-amber-500/50 flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
                       {member.isCrown ? (
                         /* Crown Icon */
-                        <svg className="w-5 h-5 text-amber-400" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
+                        <svg
+                          className="w-5 h-5 text-amber-400"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z" />
                         </svg>
                       ) : (
                         /* Shield Check Icon */
-                        <svg className="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <svg
+                          className="w-4 h-4 text-amber-400"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                        >
                           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                           <path d="M9 12l2 2 4-4" />
                         </svg>
@@ -110,12 +125,17 @@ const People = () => {
 
                 {/* Member Profile Details */}
                 <div className="pt-7 pb-6 px-4 text-center flex flex-col justify-between">
+
                   {/* English & Urdu Name */}
                   <div className="mb-4">
                     <h3 className="text-base font-bold text-slate-900 leading-snug transition-colors duration-300 group-hover:text-amber-600">
                       {member.nameEn}
                     </h3>
-                    <p className="text-xs text-amber-600/90 font-medium mt-1 dir-rtl" dir="rtl">
+
+                    <p
+                      className="text-xs text-amber-600/90 font-medium mt-1 dir-rtl"
+                      dir="rtl"
+                    >
                       {member.nameUr}
                     </p>
                   </div>
@@ -125,10 +145,15 @@ const People = () => {
                     <p className="text-[11px] font-bold text-slate-500 uppercase tracking-wider">
                       {member.roleEn}
                     </p>
-                    <p className="text-[11px] text-gray-400 font-medium mt-0.5 dir-rtl" dir="rtl">
+
+                    <p
+                      className="text-[11px] text-gray-400 font-medium mt-0.5 dir-rtl"
+                      dir="rtl"
+                    >
                       {member.roleUr}
                     </p>
                   </div>
+
                 </div>
               </div>
             </div>

@@ -28,42 +28,42 @@ const Building = () => {
           <span className="flex items-center justify-center w-4 h-4 rounded-full bg-amber-500 text-black text-[10px] font-bold">
             Y
           </span>
-          <span>ABOUT YES TIME GLOBAL</span>
+          <span>{t('about_yes_time_global')}</span>
         </div>
 
         {/* Main Heading */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
-          Building Connections. <br />
-          <span className="text-amber-500">Creating Opportunities.</span> <br />
-          Changing Futures.
+          {t('building_connections')} <br />
+          <span className="text-amber-500">{t('creating_opportunities')}</span> <br />
+          {t('changing_futures')}
         </h1>
 
         {/* Subtitle / Description */}
         <p className="mt-6 text-gray-300 text-sm sm:text-base leading-relaxed max-w-2xl font-normal">
-          <strong className="text-white font-semibold">YES TIME GLOBAL</strong> is a trusted ecosystem that connects people, businesses, and opportunities through transparent programs, strategic partnerships, and accessible solutions.
+          <strong className="text-white font-semibold">YES TIME GLOBAL</strong> {t('building_description')}
         </p>
 
         {/* Action Buttons */}
         <div className="mt-8 flex flex-wrap items-center gap-4">
           
-          {/* Primary Button (Discover Our Story - No Hover Effect) */}
+          {/* Primary Button */}
           <a
             href="#about"
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-amber-500 text-black font-semibold text-sm rounded-full shadow-md cursor-pointer"
           >
-            <span>Discover Our Story</span>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+            <span>{t('discover_full_story')}</span>
+            <svg className="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
           </a>
 
-          {/* Secondary Button (Explore Programs - Navigates to OurProgram.jsx) */}
+          {/* Secondary Button */}
           <button
             onClick={() => navigate('/our-programs', { state: { scrollToDesign: true } })}
             className="inline-flex items-center gap-2 px-7 py-3.5 bg-black/50 border border-gray-700 text-white font-semibold text-sm rounded-full transition-all duration-300 hover:border-amber-500 hover:text-amber-500 hover:bg-black/80 hover:-translate-y-0.5 cursor-pointer"
           >
-            <span>Explore Programs</span>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+            <span>{t('explore_programs')}</span>
+            <svg className="w-4 h-4 rtl:rotate-180" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
             </svg>
           </button>
@@ -87,12 +87,12 @@ const Building = () => {
             </div>
             <div>
               <div className="text-xl sm:text-2xl font-bold text-white leading-none">2023</div>
-              <div className="text-xs text-gray-400 mt-1 font-medium">Founded</div>
+              <div className="text-xs text-gray-400 mt-1 font-medium">{t('founded')}</div>
             </div>
           </div>
 
           {/* Metric 2: Powerful Programs */}
-          <div className="flex items-center gap-4 lg:border-l lg:border-gray-800 lg:pl-6">
+          <div className="flex items-center gap-4 lg:border-l lg:border-gray-800 lg:pl-6 rtl:lg:border-l-0 rtl:lg:border-r rtl:lg:pr-6">
             <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-500 shrink-0">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                 <rect x="3" y="3" width="7" height="7" rx="1" />
@@ -103,12 +103,12 @@ const Building = () => {
             </div>
             <div>
               <div className="text-xl sm:text-2xl font-bold text-white leading-none">8+</div>
-              <div className="text-xs text-gray-400 mt-1 font-medium">Powerful Programs</div>
+              <div className="text-xs text-gray-400 mt-1 font-medium">{t('powerful_programs')}</div>
             </div>
           </div>
 
           {/* Metric 3: Transparent Rate */}
-          <div className="flex items-center gap-4 lg:border-l lg:border-gray-800 lg:pl-6">
+          <div className="flex items-center gap-4 lg:border-l lg:border-gray-800 lg:pl-6 rtl:lg:border-l-0 rtl:lg:border-r rtl:lg:pr-6">
             <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-500 shrink-0">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -117,12 +117,12 @@ const Building = () => {
             </div>
             <div>
               <div className="text-xl sm:text-2xl font-bold text-white leading-none">100%</div>
-              <div className="text-xs text-gray-400 mt-1 font-medium">Transparent</div>
+              <div className="text-xs text-gray-400 mt-1 font-medium">{t('transparent_process_text')}</div>
             </div>
           </div>
 
           {/* Metric 4: Global Opportunities */}
-          <div className="flex items-center gap-4 lg:border-l lg:border-gray-800 lg:pl-6">
+          <div className="flex items-center gap-4 lg:border-l lg:border-gray-800 lg:pl-6 rtl:lg:border-l-0 rtl:lg:border-r rtl:lg:pr-6">
             <div className="p-3 rounded-xl bg-amber-500/10 border border-amber-500/20 text-amber-500 shrink-0">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                 <circle cx="12" cy="12" r="10" />
@@ -131,8 +131,8 @@ const Building = () => {
               </svg>
             </div>
             <div>
-              <div className="text-xl sm:text-2xl font-bold text-amber-500 leading-none">Global</div>
-              <div className="text-xs text-gray-400 mt-1 font-medium">Opportunities</div>
+              <div className="text-xl sm:text-2xl font-bold text-amber-500 leading-none">{t('global')}</div>
+              <div className="text-xs text-gray-400 mt-1 font-medium">{t('global_opportunities')}</div>
             </div>
           </div>
 

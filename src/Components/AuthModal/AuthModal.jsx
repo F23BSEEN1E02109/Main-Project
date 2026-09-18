@@ -35,18 +35,18 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess }) => {
     if (authMode === 'signup') {
       // 1. Passwords match validation
       if (formData.password !== formData.confirmPassword) {
-        setErrorMsg(t('passwords_do_not_match') || 'Passwords do not match');
+        setErrorMsg(t('passwords_do_not_match'));
         return;
       }
 
       // 2. Email duplication check
       const userExists = existingUsers.some((u) => u.email.toLowerCase() === formData.email.toLowerCase());
       if (userExists) {
-        setErrorMsg('User with this email already exists!');
+        setErrorMsg(t('user_already_exists'));
         return;
       }
 
-      // 3. New User Object Create aur Save (ONLY Save, No Auto-Login)
+      // 3. New User Object Create aur Save
       const newUser = {
         fullName: formData.fullName,
         email: formData.email.toLowerCase(),
@@ -56,25 +56,25 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess }) => {
       existingUsers.push(newUser);
       localStorage.setItem('registered_users', JSON.stringify(existingUsers));
       
-      setSuccessMsg('Account created successfully! Please sign in now.');
+      setSuccessMsg(t('account_created_success'));
 
       // Form inputs reset
       setFormData({ fullName: '', email: '', password: '', confirmPassword: '' });
       
-      // Auto switch to Sign In tab after 1 second
+      // Auto switch to Sign In tab after 1.2 seconds
       setTimeout(() => {
         setAuthMode('signin');
         setSuccessMsg('');
       }, 1200);
 
     } else {
-      // Sign In Logic (Only yahan par login session save hoga)
+      // Sign In Logic
       const foundUser = existingUsers.find(
         (u) => u.email.toLowerCase() === formData.email.toLowerCase() && u.password === formData.password
       );
 
       if (!foundUser) {
-        setErrorMsg('Invalid email or password!');
+        setErrorMsg(t('invalid_email_password'));
         return;
       }
 
@@ -84,7 +84,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess }) => {
       localStorage.setItem('currentUser', JSON.stringify(sessionUser));
       localStorage.setItem('user', JSON.stringify(sessionUser));
       
-      setSuccessMsg('Logged in successfully!');
+      setSuccessMsg(t('logged_in_success'));
 
       // Form inputs reset
       setFormData({ fullName: '', email: '', password: '', confirmPassword: '' });
@@ -123,7 +123,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess }) => {
         {/* Modal Header & Tabs */}
         <div className="mb-6 text-center">
           <h2 className="text-2xl font-bold text-amber-400 mb-4">
-            {authMode === 'signin' ? (t('sign_in') || 'Sign In') : (t('sign_up') || 'Sign Up')}
+            {authMode === 'signin' ? t('sign_in') : t('sign_up')}
           </h2>
 
           <div className="flex bg-[#16181a] p-1 rounded-xl border border-gray-800">
@@ -136,7 +136,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess }) => {
                   : 'text-gray-400 hover:text-white'
               }`}
             >
-              {t('sign_in') || 'Sign In'}
+              {t('sign_in')}
             </button>
             <button
               type="button"
@@ -147,7 +147,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess }) => {
                   : 'text-gray-400 hover:text-white'
               }`}
             >
-              {t('sign_up') || 'Sign Up'}
+              {t('sign_up')}
             </button>
           </div>
         </div>
@@ -171,7 +171,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess }) => {
           {authMode === 'signup' && (
             <div>
               <label className="block text-xs font-medium text-gray-300 mb-1">
-                {t('full_name') || 'Full Name'}
+                {t('full_name')}
               </label>
               <input
                 type="text"
@@ -179,7 +179,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess }) => {
                 required
                 value={formData.fullName}
                 onChange={handleInputChange}
-                placeholder="Enter your name"
+                placeholder={t('enter_your_name_placeholder')}
                 className="w-full px-4 py-2.5 rounded-xl bg-[#16181a] border border-gray-800 text-white focus:border-amber-400 focus:outline-none text-sm"
               />
             </div>
@@ -188,7 +188,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess }) => {
           {/* Email Address */}
           <div>
             <label className="block text-xs font-medium text-gray-300 mb-1">
-              {t('email_address') || 'Email Address'}
+              {t('email_address')}
             </label>
             <input
               type="email"
@@ -204,7 +204,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess }) => {
           {/* Password */}
           <div>
             <label className="block text-xs font-medium text-gray-300 mb-1">
-              {t('password') || 'Password'}
+              {t('password')}
             </label>
             <div className="relative">
               <input
@@ -236,7 +236,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess }) => {
           {authMode === 'signup' && (
             <div>
               <label className="block text-xs font-medium text-gray-300 mb-1">
-                {t('confirm_password') || 'Confirm Password'}
+                {t('confirm_password')}
               </label>
               <input
                 type={showPassword ? 'text' : 'password'}
@@ -255,7 +255,7 @@ const AuthModal = ({ isOpen, onClose, onLoginSuccess }) => {
             type="submit"
             className="w-full py-3 mt-2 bg-amber-400 text-black font-bold rounded-xl text-sm hover:bg-amber-500 transition-all shadow-lg hover:shadow-amber-400/20 cursor-pointer"
           >
-            {authMode === 'signin' ? (t('sign_in') || 'Sign In') : (t('create_account') || 'Create Account')}
+            {authMode === 'signin' ? t('sign_in') : t('create_account')}
           </button>
 
         </form>

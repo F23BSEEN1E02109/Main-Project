@@ -1,15 +1,14 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '../../i18n.js';
-import Program from './Program'; // Pehle wale button ke liye jo niche khulega
+import Program from './Program';
 import heroYes from '../../assets/hero-yes.webp';
 
 const Connect = () => {
   const { t } = useLanguage();
-  const navigate = useNavigate(); // Doosre button ke liye route change karne ke liye
+  const navigate = useNavigate();
   const [activeSection, setActiveSection] = useState(null);
 
-  // Sirf pehle button ke scroll ke liye ref
   const programRef = useRef(null);
 
   useEffect(() => {
@@ -21,8 +20,8 @@ const Connect = () => {
   const featureCards = [
     {
       id: 1,
-      title: 'Global Network',
-      desc: 'Connect with verified partners worldwide.',
+      title: t('global_network'),
+      desc: t('global_network_desc'),
       icon: (
         <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
@@ -31,8 +30,8 @@ const Connect = () => {
     },
     {
       id: 2,
-      title: 'Trusted Platform',
-      desc: 'Secure, transparent & member-focused.',
+      title: t('trusted_platform'),
+      desc: t('trusted_platform_desc'),
       icon: (
         <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -41,8 +40,8 @@ const Connect = () => {
     },
     {
       id: 3,
-      title: 'Real Impact',
-      desc: 'Opportunities that create growth & change.',
+      title: t('real_impact'),
+      desc: t('real_impact_desc'),
       icon: (
         <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 14a4 4 0 110-8 4 4 0 010 8z" />
@@ -51,8 +50,8 @@ const Connect = () => {
     },
     {
       id: 4,
-      title: 'Always With You',
-      desc: '24/7 support for all our members.',
+      title: t('always_with_you'),
+      desc: t('always_with_you_desc'),
       icon: (
         <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
@@ -75,33 +74,38 @@ const Connect = () => {
         {/* Hero Content Section */}
         <div className="relative z-10 max-w-2xl mt-8 lg:mt-12">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.15]">
-            Connect to <br />
-            <span className="text-amber-400">Global Opportunities.</span>
+            {t('connect_to')} <br />
+            <span className="text-amber-400">
+              {t('global_opportunities')}
+            </span>
           </h1>
 
           <p className="mt-6 text-gray-300 text-sm sm:text-base leading-relaxed max-w-xl">
-            YES TIME GLOBAL PRIVATE LIMITED creates accessible programs and partnerships that connect people, businesses, and opportunities across the world.
+            {t('connect_description')}
           </p>
 
           {/* Buttons Group */}
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            {/* 1st Button: Pehle ki tarah click hone par scroll ho kar niche Program.jsx kholega */}
+            
+            {/* Explore Programs Button */}
             <button
               onClick={() => setActiveSection(activeSection === 'program' ? null : 'program')}
               className="inline-flex items-center space-x-2 px-7 py-3.5 bg-amber-400 text-black font-semibold text-sm sm:text-base rounded-full shadow-lg shadow-amber-400/20 hover:bg-amber-300 hover:shadow-amber-400/40 hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
             >
-              <span>Explore Programs</span>
+              <span>{t('explore_programs')}</span>
+
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
               </svg>
             </button>
 
-            {/* 2nd Button: Click hote hi direct /how-it-works page (ProgramWork) par le jaye ga */}
+            {/* How It Works Button */}
             <button
               onClick={() => navigate('/how-it-works')}
               className="inline-flex items-center space-x-2 px-7 py-3.5 bg-black/40 border border-gray-600/80 text-white font-semibold text-sm sm:text-base rounded-full hover:border-amber-400 hover:text-amber-400 hover:bg-black/80 hover:-translate-y-0.5 transition-all duration-300 backdrop-blur-md cursor-pointer"
             >
-              <span>How It Works</span>
+              <span>{t('how_it_works')}</span>
+
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
@@ -119,10 +123,12 @@ const Connect = () => {
               <div className="flex-shrink-0 p-3 rounded-full bg-amber-400/10 border border-amber-400/20 group-hover:border-amber-400 group-hover:bg-amber-400/20 transition-colors duration-300">
                 {card.icon}
               </div>
+
               <div>
                 <h3 className="text-white font-semibold text-base group-hover:text-amber-400 transition-colors duration-300">
                   {card.title}
                 </h3>
+
                 <p className="text-gray-400 text-xs sm:text-sm mt-1 leading-snug">
                   {card.desc}
                 </p>
@@ -133,7 +139,7 @@ const Connect = () => {
 
       </section>
 
-      {/* Program Section (Pehle button ke liye jo niche khule ga) */}
+      {/* Program Section */}
       {activeSection === 'program' && (
         <div ref={programRef} className="w-full bg-white">
           <Program />

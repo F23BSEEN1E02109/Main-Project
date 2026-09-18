@@ -1,11 +1,14 @@
 import React from 'react';
+import { useLanguage } from '../../i18n.js';
 
 const WhyAttend = () => {
+  const { t } = useLanguage();
+
   const cardsData = [
     {
       id: "01",
-      title: "Global Networking",
-      description: "Connect directly with visionary entrepreneurs, experienced investors, and strategic industry partners hailing from over 30 countries worldwide to expand your international reach.",
+      titleKey: "why_attend_card1_title",
+      descKey: "why_attend_card1_desc",
       imgUrl: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=800&auto=format&fit=crop",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -16,8 +19,8 @@ const WhyAttend = () => {
     },
     {
       id: "02",
-      title: "Expert Insights",
-      description: "Learn from seasoned industry leaders and successful entrepreneurs who have scaled empires, sharing proven frameworks, hard-earned wisdom, and actionable market strategies.",
+      titleKey: "why_attend_card2_title",
+      descKey: "why_attend_card2_desc",
       imgUrl: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -27,8 +30,8 @@ const WhyAttend = () => {
     },
     {
       id: "03",
-      title: "Secure & Inclusive",
-      description: "Experience a welcoming, professionally managed environment where diverse backgrounds are celebrated, ensuring everyone receives an equal opportunity to thrive and succeed securely.",
+      titleKey: "why_attend_card3_title",
+      descKey: "why_attend_card3_desc",
       imgUrl: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800&auto=format&fit=crop",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -39,22 +42,22 @@ const WhyAttend = () => {
     },
     {
       id: "04",
-      title: "Business Growth",
-      description: "Discover real, high-impact business opportunities, funding channels, and disruptive ideas specifically curated to dramatically accelerate your personal trajectory and corporate expansion.",
+      titleKey: "why_attend_card4_title",
+      descKey: "why_attend_card4_desc",
       imgUrl: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
           <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
           <circle cx="9" cy="7" r="4" />
-          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+          <path d="M23 21v-2a4 4 0 0 1 0 7.75" />
           <path d="M16 3.13a4 4 0 0 1 0 7.75" />
         </svg>
       ),
     },
     {
       id: "05",
-      title: "Lasting Partnerships",
-      description: "Build deep, meaningful professional relationships that effortlessly evolve past casual networking events into long-term, profitable business collaborations and joint ventures.",
+      titleKey: "why_attend_card5_title",
+      descKey: "why_attend_card5_desc",
       imgUrl: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=800&auto=format&fit=crop",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -64,8 +67,8 @@ const WhyAttend = () => {
     },
     {
       id: "06",
-      title: "Exclusive Resources",
-      description: "Gain privileged entry to premium downloadable toolkits, proprietary strategic templates, and comprehensive market research reports designed to give your venture a competitive edge.",
+      titleKey: "why_attend_card6_title",
+      descKey: "why_attend_card6_desc",
       imgUrl: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=800&auto=format&fit=crop",
       icon: (
         <svg className="w-5 h-5" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -82,15 +85,15 @@ const WhyAttend = () => {
       <div className="max-w-4xl mx-auto text-center mb-16">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 text-xs font-bold uppercase tracking-wider mb-4">
           <span>✨</span>
-          <span>WHY ATTEND</span>
+          <span>{t('badge_why_attend')}</span>
         </div>
 
         <h2 className="text-3xl sm:text-5xl font-extrabold text-[#0a1128] tracking-tight mb-4">
-          Why Join Our <span className="text-amber-500">Events?</span>
+          {t('why_attend_heading_start')} <span className="text-amber-500">{t('why_attend_heading_accent')}</span>
         </h2>
 
         <p className="text-gray-500 text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
-          Our events are carefully designed to create meaningful connections and provide actionable insights that transform your business and personal growth.
+          {t('why_attend_subtext')}
         </p>
       </div>
 
@@ -104,7 +107,7 @@ const WhyAttend = () => {
               <div className="relative h-48 w-full overflow-hidden bg-slate-900">
                 <img
                   src={card.imgUrl}
-                  alt={card.title}
+                  alt={t(card.titleKey)}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 
@@ -121,11 +124,11 @@ const WhyAttend = () => {
 
               <div className="p-6">
                 <h3 className="text-xl font-bold text-[#0a1128] mb-3 transition-colors duration-300 group-hover:text-amber-500">
-                  {card.title}
+                  {t(card.titleKey)}
                 </h3>
 
                 <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">
-                  {card.description}
+                  {t(card.descKey)}
                 </p>
               </div>
             </div>

@@ -1,11 +1,14 @@
 import React from 'react';
+import { useLanguage } from '../../i18n.js';
 
 const Ecosystem = () => {
+  const { t } = useLanguage();
+
   const ecosystemItems = [
     {
       id: 1,
-      title: 'Shopping & Savings',
-      subtitle: 'Smart shopping, better savings',
+      title: t('shopping_savings'),
+      subtitle: t('shopping_savings_desc'),
       image:
         'https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=600&auto=format&fit=crop',
       icon: (
@@ -26,8 +29,8 @@ const Ecosystem = () => {
     },
     {
       id: 2,
-      title: 'Vehicles Solutions',
-      subtitle: 'Mobility solutions made easy',
+      title: t('vehicles_solutions'),
+      subtitle: t('vehicles_solutions_desc'),
       image:
         'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=600&auto=format&fit=crop',
       icon: (
@@ -48,8 +51,8 @@ const Ecosystem = () => {
     },
     {
       id: 3,
-      title: 'Property Opportunities',
-      subtitle: 'Access to property & real estate',
+      title: t('property_opportunities'),
+      subtitle: t('property_opportunities_desc'),
       image:
         'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=600&auto=format&fit=crop',
       icon: (
@@ -70,8 +73,8 @@ const Ecosystem = () => {
     },
     {
       id: 4,
-      title: 'Agriculture & Farming',
-      subtitle: 'Supporting farmers & agriculture',
+      title: t('agriculture_farming'),
+      subtitle: t('agriculture_farming_desc'),
       image:
         'https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=600&auto=format&fit=crop',
       icon: (
@@ -92,8 +95,8 @@ const Ecosystem = () => {
     },
     {
       id: 5,
-      title: 'Business Solutions',
-      subtitle: 'Empowering businesses for growth',
+      title: t('business_solutions'),
+      subtitle: t('business_solutions_desc'),
       image:
         'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=600&auto=format&fit=crop',
       icon: (
@@ -121,14 +124,14 @@ const Ecosystem = () => {
         {/* Top Hoverable Pill Tag Button */}
         <div className="mb-4">
           <button className="inline-flex items-center justify-center px-4 py-1.5 rounded-full bg-[#090d16] text-white text-xs font-bold uppercase tracking-wider transition-all duration-300 ease-out hover:scale-110 hover:shadow-lg hover:shadow-amber-500/20 hover:border-amber-400 border border-transparent cursor-pointer">
-            OUR ECOSYSTEM
+            {t('our_ecosystem')}
           </button>
         </div>
 
         {/* Main Section Heading */}
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-center text-[#0f172a] tracking-tight mb-16">
-          One Ecosystem. Multiple <br className="hidden sm:block" />
-          <span className="text-amber-500">Opportunities.</span>
+          {t('one_ecosystem')}{' '}
+          <span className="text-amber-500">{t('ecosystem_opportunities')}</span>
         </h2>
 
         {/* Ecosystem Timeline / Cards Grid Container */}
